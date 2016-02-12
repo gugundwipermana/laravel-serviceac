@@ -1,0 +1,75 @@
+body {
+    background-color: #ededed;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+a {
+    color: #efa9a6;
+}
+
+a:hover {
+    color: #333;
+}
+
+a, a:hover, a:active, a:focus {
+    text-decoration: none;
+} 
+
+.font-white {
+    color: #fff;
+}
+
+.font-red {
+    color: #e62117;
+}
+
+.font-green {
+    color: #5cb85c;
+}
+
+/* ================================================================================================ REPLACE BOOTSTRAP */
+.navbar {
+    border: 0;
+}
+    .navbar-default {
+        background-color: #fff;
+    }
+
+.panel {
+    border: 0;
+    border-radius: 0;
+}
+    .panel-default > .panel-heading {
+        border-bottom: 0;
+        border-color: #5cb85c;
+        border-right: 6px solid #efa9a6;
+        border-radius: 0;
+        background-color: white;
+        min-height: 40px;
+    }
+
+    .panel-default > .panel-heading h3.panel-title {
+        color: #efa9a6;
+        font-size: 20px;
+        float: right;
+    }
+
+.breadcrumb {
+    border-radius: 0;
+    background-color: #fff;
+}
+
+/* ubah dropdown */
+.dropdown-menu {
+    border: 1px solid #eee;
+    border-radius: 0;
+}
+
+.list-group-item {
+    border: 0;
+}
+
+/* ================================================================================================ END REPLACE BOOTSTRAP */

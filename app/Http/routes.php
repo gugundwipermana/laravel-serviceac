@@ -34,4 +34,19 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+
+    Route::get('abouts/daftar', 'AboutsController@daftar');
+    Route::get('blogs/daftar', 'BlogsController@daftar');
+    Route::get('galleries/daftar', 'GalleriesController@daftar');
+    Route::get('products/daftar', 'ProductsController@daftar');
+    Route::get('questions/daftar', 'QuestionsController@daftar');
+    Route::get('services/daftar', 'ServicesController@daftar');
+
+    Route::resource('/abouts', 'AboutsController');
+    Route::resource('/blogs', 'BlogsController');
+    Route::resource('/galleries', 'GalleriesController');
+    Route::resource('/products', 'ProductsController');
+    Route::resource('/questions', 'QuestionsController');
+    Route::resource('/services', 'ServicesController');
+    
 });

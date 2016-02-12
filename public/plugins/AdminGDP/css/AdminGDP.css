@@ -1,0 +1,241 @@
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+
+/*.navbar-default .navbar-brand {
+    color: #5cb85c;
+}*/
+
+
+
+
+/* ============================================================================================ ADMIN LAYOUT */
+/* ============================================================================================ */
+/* ============================================================================================ */
+/* ============================================================================================ */
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+
+/* ============================================================= SIDEBAR */
+#menu-toggle {
+    position:fixed; 
+    width:55px; 
+    height:55px; 
+    bottom: 10px; 
+    right: 10px; 
+    cursor:pointer; 
+    background: #e62117;
+    border: 4px solid #efa9a6;
+    border-radius: 50%;
+    z-index: 1001;
+}
+    #menu-toggle h2 {
+        padding: 0;
+        margin: 0;
+
+        margin-top: 8px;
+        margin-left: 9px;
+        color: #fff;
+    }
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+
+    margin-top: 50px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* USER INFO */
+.sidebar-nav .user-info {
+    padding: 20px 10px; 
+    text-align: center;
+}
+    .sidebar-nav .user-info img {
+        border: 5px solid #dedede;
+    }
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    top: 0px;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #fff;
+    border-right: 1px solid #eee;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+    margin-top: 50px;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+    /*border-bottom: 1px solid #eee;*/
+    border-right: 6px solid #fff;
+}
+
+.sidebar-nav li span {
+    text-indent: 0;
+}
+
+.sidebar-nav li:hover {
+    background: #333;
+    border-right: 6px solid #5cb85c;
+}
+    .sidebar-nav li.active {
+        border-right: 6px solid #5cb85c;
+    }
+
+
+.sidebar-nav li a {
+    display: block;
+    color: #333;
+    
+    text-align: right;
+    margin-right: 20px;
+}
+
+.sidebar-nav li a:hover {
+    color: #fff;
+}
+
+.sidebar-nav li a .caret-left {
+    float: left;
+}
+
+.sidebar-nav a.list-group-item i {
+    margin: 0 10px;
+}
+
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+/* END SIDEBAR */
+
+
+/* ============================================================================================ END LAYOUT */
+/* ============================================================================================ */
+/* ============================================================================================ */
+
+
+
+
+
+/* PAGE CONTENT WRAPPER */
+
+@media(min-width:768px) {
+    .breadcrumb-costum {
+        float:right;
+    }
+}
+
+.dropdown-menu-navcostum {
+    width: 250px;
+}
+
+    .dropdown-menu-navcostum li a {
+        padding: 5px 10px;
+    }
+    .dropdown-menu-navcostum li img {
+        float: left;
+        margin-right: 5px;
+    }
+    .dropdown-menu-navcostum li h4 {
+        font-size: 15px;
+        margin: 0;
+    }
+    .dropdown-menu-navcostum li p {
+        color: #666;
+        font-size: 10px;
+    }
+
+    /* message */
+    .dropdown-menu-navcostum.message li {
+        width: 250px;
+        height: 40px;
+        overflow: hidden;
+        border-bottom: 1px solid #ddd;
+    }
+    .dropdown-menu-navcostum.message li:last-child {
+        border-bottom: 0px;
+    }
+
+    /* profile */
+    .dropdown-menu-navcostum.profile li img {
+        /*margin: 0 5px 0 20px;*/
+        border: 3px solid #dedede;
+    }
+    .dropdown-menu-navcostum.profile .box-profile {
+        padding: 15px;
+    }
+    .dropdown-menu-navcostum.profile li h4 {
+        padding-top: 10px;
+    }
