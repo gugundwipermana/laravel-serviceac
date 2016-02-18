@@ -11,9 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+    //return view('welcome'); 
+//});
+
+Route::get('/', 'SitesController@index');
+Route::get('/about', 'SitesController@about');
+Route::get('/article', 'SitesController@article');
+Route::get('/service', 'SitesController@service');
+Route::get('/gallery', 'SitesController@gallery');
+Route::get('/contact', 'SitesController@contact');
+
+Route::get('/article/{id}', 'SitesController@showArticle');
+Route::get('/product/{id}', 'SitesController@showProduct');
+
+Route::post('/questions/store', 'QuestionsController@storeGuest');
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +53,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('products/daftar', 'ProductsController@daftar');
     Route::get('questions/daftar', 'QuestionsController@daftar');
     Route::get('services/daftar', 'ServicesController@daftar');
+    Route::get('settings/daftar', 'SettingsController@daftar');
 
     Route::resource('/abouts', 'AboutsController');
     Route::resource('/blogs', 'BlogsController');
@@ -48,5 +61,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('/products', 'ProductsController');
     Route::resource('/questions', 'QuestionsController');
     Route::resource('/services', 'ServicesController');
+    Route::resource('/settings', 'SettingsController');
     
 });

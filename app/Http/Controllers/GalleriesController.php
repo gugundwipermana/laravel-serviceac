@@ -31,33 +31,40 @@ class GalleriesController extends Controller
      */
     public function index()
     {
-        return view('galleries.index');
+         $galleries = $this->gallery->orderBy('id', 'desc')->get();
+        return view('galleries.index', compact('galleries'));
     }
 
-    public function daftar()
+    public function store(Request $request, Gallery $gallery)
     {
-        $token = csrf_token(); 
-       
-        $base_url = \URL::to('/');
 
-        $gallery = $this->gallery->orderBy('id', 'desc')->get();
-       
-        $display = '';
-        $no = 1;
-        foreach ($gallery as $key) {
-            $display .= "
-                <tr>
-                    <td>$no</td>
-                    <td><img src='$base_url/upload/img/$key->image' height='50' ></td>
-                    <td>
-                        <button data-id='$key->id' class='btn btn-primary btn-edit'><i class='fa fa-edit'></i></button>
-                        <button data-id='$key->id' class='btn btn-danger btn-delete' data-token='$token'><i class='fa fa-trash'></i></button>
-                    </td>
-                </tr>
-            ";
-            $no++;
+        $image = '';
+
+       if(\Input::hasFile('image'))
+        {
+
+            $destinationPath = 'upload/img'; // upload path
+            $nameimage = \Input::file('image')->getClientOriginalName();
+            $fileName = rand(11111,99999).'-'.$nameimage; // renameing image
+            \Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+
+            $image = $fileName;
         }
-        return $display;
-        exit();
+
+        $insert =  \DB::table('galleries')->insert([
+            'image'                => $image
+        ]);
+
+        //$insert = $product->create($request->all());
+
+         return redirect('galleries');
+    }
+
+    public function destroy(Gallery $gallery)
+    {
+        //
+        $gallery->delete();
+        
+        return redirect('galleries');
     }
 }

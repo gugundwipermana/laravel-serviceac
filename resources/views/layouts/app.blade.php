@@ -77,13 +77,14 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
+                                @inject('question', 'App\Question');
                                 <li class="dropdown">
-                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope"></i><span class="label label-warning">2</span></a>
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope"></i><span class="label label-warning">{{ $question->getJum() }}</span></a>
                                   <ul class="dropdown-menu dropdown-menu-navcostum message">
-
-                                    <li><a href=""><img src="img/user.jpg" alt="..." class="img-circle" height="30"><h4>Gugun Dwi Permana</h4><p>Hello, Saya mau tanya.</p></a></li>
-                                    <li><a href=""><img src="img/user.jpg" alt="..." class="img-circle" height="30"><h4>Gugun Dwi Permana</h4><p>Hello, Kenapa saya lapar ya?</p></a></li>
-                                    
+                                        
+                                    @foreach($question->getFive() as $question)
+                                    <li><a href=""><img src="img/user.jpg" alt="..." class="img-circle" height="30"><h4>{{ $question->name }}</h4><p>{!! $question->description !!}</p></a></li>
+                                    @endforeach
                                   </ul>
                                 </li>
 
@@ -129,6 +130,7 @@
                 <li><a href="{{ url('/blogs') }}">Articles<i class="fa fa-btn fa-wordpress"></i></a></li>
                 <li><a href="{{ url('/galleries') }}">Galleries<i class="fa fa-btn fa-image"></i></a></li>
                 <li><a href="{{ url('/questions') }}">Questions<i class="fa fa-btn fa-question"></i></a></li>
+                <li><a href="{{ url('/settings') }}">Settings<i class="fa fa-btn fa-gears"></i></a></li>
 
                 @endif
                 <!-- 

@@ -1,0 +1,294 @@
+/*!
+ * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@font-face {
+  font-family: Gotham-Book;
+  src: url(../fonts/Gotham-Book.ttf);
+}
+
+@font-face {
+  font-family: Lato-Thin;
+  src: url(../fonts/Lato-Thin.ttf); 
+}
+
+@font-face {
+  font-family: Lato-Light;
+  src: url(../fonts/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: Lato-Regular;
+  src: url(../fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: Lato-Black;
+  src: url(../fonts/Lato-Black.ttf);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato-Thin', Georgia, Serif;
+    color: #34ac14;
+}
+
+a, li, td {
+    font-family: 'Lato-Light', Georgia, Serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+
+    font-family: 'Gotham-Book', Georgia, Serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
+of those sections to manage the look and feel of the site. */
+
+.intro-section {
+    height: 80%;
+    padding-top: 0; /*150px;*/
+    text-align: center;
+    background: #fff;
+}
+
+.intro-section-detail {
+    height: 150px;
+
+    background-attachment: fixed;
+    background-image: url('../img/green_city-wide.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.category-section {
+    height: auto;
+    padding-top: 35px;
+    text-align: center;
+    background: #eee;
+}
+
+.promo-section {
+    height: auto;
+    padding-top: 35px;
+    /*text-align: center;*/
+    background: #fff;
+
+    /*background-image: url('../img/photo1.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-attachment: fixed;*/
+
+    border-bottom: 8px solid #34ac14;
+}
+
+.footer-section {
+    height: auto;
+    /*
+    padding-top: 20px;
+    padding-bottom: 20px;*/
+
+    text-align: center;
+    background: #eee;
+
+    background-image: url('../img/green_city-wide.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-attachment: fixed;
+
+    font-size: 20px;
+    color: white;
+}
+
+.gallery-section {
+    height: auto;
+    padding: 50px 0;
+    text-align: center;
+    background: #fff;
+
+    border-bottom: 8px solid #34ac14;
+}
+
+.contact-section {
+    height: auto;
+    /*padding-top: 20px;*/
+    /*text-align: center;*/
+    background: #fff;
+
+    border-top: 8px solid #fff;
+}
+
+    .box-contact {
+        width: 100%;
+        height: auto;
+
+        border-bottom: 8px solid #fff;
+    }
+
+    .map {
+        width: 100%;
+        height: 500px;
+    }
+
+    .footer {
+        background-color: #333;
+        width: 100%;
+        color: white;
+        padding: 20px 0 0 10px;
+        margin-top: 20px;
+    }
+
+/* ------------------------ BOOTSTRAP COSTUM ---------------------------------------*/
+/* ------------------------ CAROUSEL HEADER ---- */
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+
+    background-attachment: fixed;
+}
+
+.navbar-default {
+    background-color: rgba(0,0,0,.8);
+    border: 0;
+}
+
+@media(min-width:767px) {
+    .navbar-default {
+        background-color: rgba(0,0,0,0);
+    }
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+        background-color: rgba(0,0,0,.7);
+    }
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    font-family: 'Lato-Black', Georgia, Serif;  
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 20%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+    .carousel-caption h2, .carousel-caption p {
+        color: white;
+    }
+    .carousel-caption h2 {
+        font-family: 'Lato-Black', Georgia, Serif;    
+    }
+
+.btn-bulat {
+    border-radius: 50%;
+}
+
+/* MODAL GALLERY */
+.modal-gall {
+    background-color: rgba(0,0,0,.8);
+}
+.modal-content-gall {
+    background-color: rgba(0,0,0,0);
+}
+
+.modal-header-gall {
+    border: 0;
+}
+
+.close-gall {
+    color: white;
+    opacity: 1;
+    font-size: 30px;
+}
+
+/* -------------------------------------------------------- ALL CONFIG */
+.overlay {
+    position: relative; 
+    top: 0px; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0, .7); 
+}
+
+.padding-v30 {
+    padding: 30px 0;
+}
+
+.margin-bottom50 {
+    margin-bottom: 50px;
+}
+
+/* -------------------------------------------------------- GALLERY */
+.portfolio-item {
+    margin-bottom: 25px;
+}
+
+
+/* CONTACT */
+.panel-contact-costum {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
+}

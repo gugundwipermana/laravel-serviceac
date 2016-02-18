@@ -20,7 +20,7 @@ class QuestionsController extends Controller
      */
     public function __construct(Question $question)
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
         $this->question = $question;
     }
 
@@ -66,29 +66,6 @@ class QuestionsController extends Controller
     public function store(Request $request, Question $question)
     {
 
-        /*$title                  = \Input::get('title');
-        $description     = \Input::get('description');
-        $email              = \Input::get('email');
-
-        if($image != '') {
-            $imagename    = 'product-'.rand(11111,99999).'-gudperna.png';
-
-            $image = str_replace(' ', '+', $image);
-            list($type, $image) = explode(';', $image);
-            list(, $image)      = explode(',', $image);
-            $image = base64_decode($image);
-
-            file_put_contents('upload/img/'.$imagename, $image);
-        } else {
-            $imagename = '';
-        }
-
-        $insert =  \DB::table('questions')->insert([
-            'title'                    => $title,
-            'description'       => $description,
-            'image'                => $imagename
-        ]);
-*/
         $insert = $question->create($request->all());
 
         if($insert) {
@@ -102,6 +79,13 @@ class QuestionsController extends Controller
     {
         header("Content-type: text/x-json");
         return json_encode($question);
+    }
+
+    public function storeGuest(Request $request, Question $question)
+    {
+        $insert = $question->create($request->all());
+
+        return redirect('contact');
     }
 
     public function update(Request $request, Question $question)

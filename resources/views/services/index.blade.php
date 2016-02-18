@@ -8,7 +8,7 @@
     <div class="col-md-6">
         <ol class="breadcrumb breadcrumb-costum">
           <li><a href="{{ url('/home') }}">Home</a></li>
-          <li class="active">Articles</li>
+          <li class="active">Service</li>
         </ol>
     </div>
 </div>
@@ -48,7 +48,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Data Products
+                    Service
                 </div>
                 <div class="panel-body">
                        
