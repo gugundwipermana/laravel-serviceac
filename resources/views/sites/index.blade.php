@@ -7,44 +7,32 @@
         <header id="myCarousel" class="carousel slide">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+                {{--*/ $active = 'active' /*--}}
+                {{--*/ $no = 0 /*--}}
+                @foreach($galleries as $gallery)
+                        <li data-target="#myCarousel" data-slide-to="{{ $no }}" class="{{ $active }}"></li>
+                {{--*/ $active = '' /*--}}
+                {{--*/ $no = $no+1 /*--}}
+                @endforeach
             </ol>
 
             <!-- Wrapper for Slides -->
             <div class="carousel-inner">
-                <div class="item active">
+                
+                {{--*/ $active = 'active' /*--}}
+                @foreach($galleries as $gallery)
+                <div class="item {{ $active }}">
                     <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('img/green_city-wide.jpg');"></div>
+                    <div class="fill" style="background-image:url('{{ asset('upload/img/'.$gallery->image) }}');"></div>
                     <div class="carousel-caption">
-                        <h2>HIRUP UDARA SEGAR SETIAP SAAT</h2>
+                        <h2>CONTACT ME</h2>
                         <p>
-                            Suasana yang segar dan nyaman dapat membantu aktifitas kita menjadi lebih baik. lingkungan keluarga dan lingkungan pekerjaan akan menjadi hidup. Kebahagiaan akan terjalin dalam kehidupan kita.
+                              {!! $setting->contact !!}
                         </p>
                     </div>
                 </div>
-                <div class="item">
-                    <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('img/photo1.png');"></div>
-                    <div class="carousel-caption">
-                        <h2>AMAN TIDAK MENYEBABKAN KEBOCORAN</h2>
-                        <p>
-                            Suasana yang segar dan nyaman dapat membantu aktifitas kita menjadi lebih baik. lingkungan keluarga dan lingkungan pekerjaan akan menjadi hidup. Kebahagiaan akan terjalin dalam kehidupan kita.
-                        </p>
-                    </div>
-                </div>
-                <div class="item">
-                    <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('img/photo2.png');"></div>
-                    <div class="carousel-caption">
-                        <h2>NIKMATI SUASANA SANTAI DENGAN KELUARGA</h2>
-                        <p>
-                            Suasana yang segar dan nyaman dapat membantu aktifitas kita menjadi lebih baik. lingkungan keluarga dan lingkungan pekerjaan akan menjadi hidup. Kebahagiaan akan terjalin dalam kehidupan kita.
-                        </p>
-                    </div>
-                </div>
-            </div>
+                {{--*/ $active = '' /*--}}
+                @endforeach
 
             <!-- Controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -63,11 +51,15 @@
 
             <div id="categoryCarousel" class="carousel slide">
                 <!-- Indicators -->
-                <!-- <ol class="carousel-indicators">
-                    <li data-target="#testimonyCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#testimonyCarousel" data-slide-to="1"></li>
-                    <li data-target="#testimonyCarousel" data-slide-to="2"></li>
-                </ol> -->
+                <ol class="carousel-indicators" style="position:absolute;bottom:-30px">
+                    {{--*/ $active = 'active' /*--}}
+                    {{--*/$no = 0 /*--}}
+                    @foreach(array_chunk($products->all(), 3) as $row)
+                    <li data-target="#testimonyCarousel" data-slide-to="{{ $no }}" class="{{ $active }}"></li>
+                    {{--*/$no = $no+1 /*--}}
+                     {{--*/ $active = '' /*--}}
+                    @endforeach
+                </ol>
 
                 <!-- Wrapper for Slides -->
                 <div class="carousel-inner">
@@ -148,8 +140,8 @@
 
                           <div class="col-md-6">
                         
-                              <h3><span class="fa fa-newspaper" aria-hidden="true"></span> <a href="{{ url('article/'.$article->id) }}">{!! $article->title !!}</a></h3>
-                              <p><span class="glyphicon glyphicon-time"></span> Posted on {!! $article->created_at !!}</p>
+                              <h3><span class="fa fa-newspaper-o" aria-hidden="true"></span> <a href="{{ url('article/'.$article->id) }}">{!! $article->title !!}</a></h3>
+                              <p><span class="fa fa-calendar"></span> Posted on {{ date('d F Y', strtotime($article->created_at)) }}</p>
                               {!! str_limit($article->description, $limit = 100, $end = '...') !!}
                             
                       </div>

@@ -30,11 +30,11 @@
                     </div>
                     <div class="col-md-7">
                         <h2><a href="{{ url('article/'.$article->id) }}">{!! $article->title !!}</a></h2>
-                        <p><span class="glyphicon glyphicon-time"></span> Posted on {!! $article->created_at !!}</p>
-                         <p>by <a href="">{{ $article->user->name }}</a></p>
+                        <p><span class="fa fa-calendar"></span> Posted on {{ date('d F Y', strtotime($article->created_at)) }}</p>
+                         <p>by <a href="">{{ $article->user->name }}</a></p/public_html/serviceac/resources/views/sites>
                         {!! str_limit($article->description, $limit = 100, $end = '...') !!}
                         <br/>
-                        <a class="btn btn-primary" href="{{ url('article/'.$article->id) }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <a class="btn btn-primary" href="{{ url('article/'.$article->id) }}">Read More <span class="fa fa-chevron-right"></span></a>
                     </div>
                 </div>
                 <hr>

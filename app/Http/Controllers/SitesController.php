@@ -25,8 +25,10 @@ class SitesController extends Controller
         $products = Product::get();
         $articles = Blog::orderBy('id', 'DESC')->take(4)->get();
 
+        $galleries = Gallery::orderBy(\DB::raw('RAND()'))->take(5)->get();
+
         $setting = Setting::first();
-        return view('sites.index', compact('products', 'articles', 'setting'));
+        return view('sites.index', compact('products', 'articles', 'galleries', 'setting'));
     }
 
     public function about()

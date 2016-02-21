@@ -29,8 +29,8 @@
 
                 @foreach($galleries as $gallery)
                 <div class="col-md-3 portfolio-item">
-                    <a href="#" data-toggle="modal" data-target="#myModalGal1">
-                        <img class="img-responsive" src="{{ asset('upload/img/'.$gallery->image) }}" alt="">
+                    <a href="#" class="" data-toggle="modal" data-target="#myModalGal1">
+                        <img class="img-responsive gall" id="gall{{ $gallery->id }}" src="{{ asset('upload/img/'.$gallery->image) }}" alt="">
                     </a>
                 </div>
                 @endforeach
@@ -59,7 +59,7 @@
                 <button type="button" class="close close-gall" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
               <div class="modal-body" style="text-align:center">
-                <img src="img/gal1.jpeg" />
+                <img id="gall-modal" src="" style="width: 100%" />
               </div>
             </div>
           </div>

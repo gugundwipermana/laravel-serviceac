@@ -26,7 +26,7 @@
                 <hr>
 
                 <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on {{ $article->created_at }}</p>
+                <p><span class="fa fa-calendar"></span> Posted on {{ date('d F Y', strtotime($article->created_at)) }}</p>
 
                 <hr>
 

@@ -72,14 +72,35 @@
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script>
     function initialize() {
+
+        var cord = new google.maps.LatLng({!! $setting->lat !!}, {!! $setting->long !!});
+
       var mapProp = {
-        center:new google.maps.LatLng(-6.1646974,106.8310506),
+        center:cord,
         zoom:14,
         mapTypeId:google.maps.MapTypeId.ROADMAP
       };
+
       var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+      // Set map marker
+      var marker = new google.maps.Marker({
+            position: cord,
+            map: map,
+            title: 'My Location',
+            animation:google.maps.Animation.BOUNCE
+      });
     }
     google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <script>
+            $('.gall').click(function() {
+                var id = $(this).attr('id');
+                var imgSrc = document.getElementById(id).getAttribute('src');
+                console.log(imgSrc);
+                document.getElementById("gall-modal").setAttribute("src", imgSrc);
+            });
     </script>
 </body>
 </html>
